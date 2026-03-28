@@ -1,8 +1,8 @@
 import requests
-from ..utils import get_env_variables
+from utils import get_env_variables
 
 
-def chat_requests(prompt: str):
+def chat_request(prompt: str):
     open_web_ui_token, base_url = get_env_variables()
 
     url = f"{base_url}/api/chat/completions"
@@ -15,5 +15,7 @@ def chat_requests(prompt: str):
         "model": "mistral:latest",
         "messages": [{"role": "user", "content": f"{prompt}"}],
     }
+
+    print("Getting completion...")
     response = requests.post(url, headers=headers, json=data)
     return response.json()

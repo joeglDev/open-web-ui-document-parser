@@ -1,13 +1,13 @@
 # look for file
 
 
-
 # if not found upload file
 
-class Pipeline:
 
+class Pipeline:
     def run(self):
         print("Running pipeline")
+
 
 pipeline = Pipeline()
 pipeline.run()

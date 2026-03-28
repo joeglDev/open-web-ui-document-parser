@@ -1,5 +1,5 @@
 import requests
-from utils import get_env_variables
+from api.utils.get_env_variables import get_env_variables
 
 
 def chat_request(prompt: str):

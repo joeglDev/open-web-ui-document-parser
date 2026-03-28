@@ -1,7 +1,7 @@
 import requests
 
 from api.schemas.FileMetadata import FileMetadata
-from utils import get_env_variables
+from .utils.get_env_variables import get_env_variables
 
 
 def get_files() -> list[FileMetadata]:
@@ -14,6 +14,6 @@ def get_files() -> list[FileMetadata]:
         "Content-Type": "application/json",
     }
 
-    print("Getting completion...")
+    print("Getting files...")
     response = requests.get(url, headers=headers)
     return response.json()
